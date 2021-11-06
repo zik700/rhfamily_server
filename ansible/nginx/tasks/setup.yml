@@ -1,0 +1,7 @@
+---
+  - name: SETUP | Enable nginx daemon
+    service:
+      name: nginx 
+      enabled: yes
+      state: started
+...

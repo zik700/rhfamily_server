@@ -1,0 +1,9 @@
+---
+  hosts: localhost
+  gather_facts: yes
+  roles:
+    - python
+    - ansible
+    - docker
+    - nginx
+    - cockpit

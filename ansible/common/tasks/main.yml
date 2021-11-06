@@ -1,0 +1,6 @@
+---
+# tasks file for common
+- name: COMMON | Install EPEL
+  yum:
+     name: epel-release
+     state: present

@@ -1,0 +1,17 @@
+---
+# Vagrant configuration
+vagrant_api_version: "2"
+
+# VM configuration
+machine:
+    box: "centos/7"
+    v_provider: "virtualbox"
+    v_ip_address: "192.168.0.11"
+    v_name: "sii"
+    v_hostname: "Sii"
+    v_memory: "512"
+    v_cpus: "2"
+
+web:
+    v_http_port: 80
+    host_http_port: 8080

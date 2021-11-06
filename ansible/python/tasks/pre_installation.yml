@@ -1,0 +1,7 @@
+---
+  - name: Update cache
+    yum:
+      update_cache: yes
+    tags:
+      - python-install
+...
