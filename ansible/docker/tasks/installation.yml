@@ -1,0 +1,21 @@
+---
+  - name: YUM | Add docker repostiroy
+    shell:
+      cmd: |
+            yum-config-manager \
+            --add-repo \
+            https://download.docker.com/linux/centos/docker-ce.repo
+    tags:
+      - docker
+      - docker-install
+      
+  - name: YUM | Install docker
+    yum:
+      name:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+    tags:
+      - docker
+      - docker-install
+...

@@ -1,5 +1,5 @@
 ---
-# tasks file for docker
-include: pre_installation.yml
-include: installation.yml
-include: configuration.yml
+# tasks file for ansible/docker
+- include: pre_installation.yml
+- include: installation.yml
+- include: setup.yml

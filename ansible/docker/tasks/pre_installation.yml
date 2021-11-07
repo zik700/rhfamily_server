@@ -1,0 +1,25 @@
+---
+  - name: YUM | Ensure old packages are removed
+    yum:
+      name: 
+        - docker
+        - docker-client
+        - docker-client-latest
+        - docker-common
+        - docker-latest
+        - docker-latest-logrotate
+        - docker-logrotate
+        - docker-engie
+      state: absent
+    tags:
+      - docker
+      - docker-install
+
+  - name: YUM | Install utils
+    yum: 
+      name: yum-utils
+      state: present
+    tags:
+      - docker
+      - docker-install
+...

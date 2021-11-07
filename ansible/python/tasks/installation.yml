@@ -1,8 +1,0 @@
----
-  - name: PYTHON | Install python "{{ version }}"
-    yum:
-      name: python=={{ version }}
-      state: present
-    tags:
-      - python-install
-...

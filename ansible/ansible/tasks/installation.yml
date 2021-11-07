@@ -1,0 +1,9 @@
+---
+  - name: YUM | Install ansible
+    yum:
+      name: ansible
+      state: present
+    tags:
+      - ansible
+      - ansible-install
+...

@@ -1,0 +1,27 @@
+---
+  - name: YUM | Ensure epel-release installed
+    yum:
+      name: epel-release
+      state: present
+    update_cache: yes
+    tags:
+      - cockpit
+      - cockpit-install
+      
+  - name: YUM | Ensure nginx is installed
+    yum:
+      name: nginx
+      state: present
+    tags:
+      - cockpit
+      - cockpit-install
+
+  - name: YUM | Ensure nginx service is running
+    service:
+      name: nginx
+      enabled: yes
+      state: started
+    tags:
+      - cockpit
+      - cockpit-install
+...

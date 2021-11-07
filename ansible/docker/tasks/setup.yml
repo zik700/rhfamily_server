@@ -1,0 +1,10 @@
+---
+  - name: SERVICE | Enable docker daemon
+    service:
+      name: docker
+      enabled: yes
+      state: running
+    tags:
+      - docker
+      - docker-setup
+...

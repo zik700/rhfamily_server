@@ -1,0 +1,27 @@
+---
+  - name: CONF | Ensure socket is configured
+    template:
+      src: cockpit.socket.j2
+      dest: /etc/systemd/system/cockpit.socket
+    tags:
+      - cockpit
+      - cockpit-setup 
+
+  - name: SERVICE | Ensure cockpit service is running
+    service:
+      name: cockpit
+      enabled: yes
+      state: running 
+    tags:
+      - cockpit
+      - cockpit-setup 
+
+  - name: CONF | Ensure nginx vhost is configured
+    template:
+      src: nginx_vhost.conf.j2
+      dest: /etc/nginx/conf.d/vhost_cockpit.conf
+    notify: reload nginx  
+    tags:
+      - cockpit
+      - cockpit-setup 
+...

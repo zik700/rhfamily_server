@@ -1,0 +1,9 @@
+---
+  - name: Ensure EPEL-RELEASE is installed
+    yum:
+      name: epel-release
+      state: present
+    tags:
+      - ansible
+      - ansible-install
+...

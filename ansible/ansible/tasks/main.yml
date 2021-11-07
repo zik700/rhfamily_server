@@ -1,5 +1,4 @@
 ---
-# tasks file for ansible
-include: pre_installation.yml
-include: installation.yml
-include: configuration.yml
+# tasks file for ansible/ansible
+- include: pre_installation.yml
+- include: installation.yml

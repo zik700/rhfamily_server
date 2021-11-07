@@ -1,9 +1,11 @@
 ---
-  hosts: localhost
-  gather_facts: yes
-  roles:
-    - python
-    - ansible
-    - docker
-    - nginx
-    - cockpit
+  - hosts: all
+    gather_facts: yes
+    become: yes
+    become_method: sudo
+    roles:
+      - python3
+      - ansible
+      - docker
+      - nginx
+      - cockpit 

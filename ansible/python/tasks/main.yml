@@ -1,5 +1,0 @@
----
-# tasks file for python
-include: pre_installation.yml
-include: installation.yml
-include: configuration.yml

@@ -25,7 +25,7 @@ if File.file?(file)
         end
     else
       raise 'Configuration for web does not exists! Please add \'web\' key and expected values like in example file.'
-    end
+    end 
 else
   raise "Configuration file 'config.yaml' does not exist."
 end
@@ -33,6 +33,7 @@ end
 
 # Vagrant declaration
 Vagrant.configure("#{vagrant_conf}") do |config|
+    config.vm.provision :shell, :inline => "setenforce 0", run: "always"
     config.vm.box = machine_conf["box"]
 
     # Minimum values for dev-machine
@@ -47,6 +48,7 @@ Vagrant.configure("#{vagrant_conf}") do |config|
     config.vm.network "forwarded_port",
        guest: "#{v_port}", host: "#{host_port}"
 
+  # Installation all required packages by tags
     config.vm.provision "ansible" do |ansible|
       ansible.playbook = "ansible/main.yml"
       ansible.tags = "python"
@@ -57,4 +59,19 @@ Vagrant.configure("#{vagrant_conf}") do |config|
       ansible.tags = "nginx"
     end
     
+    config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/main.yml"
+      ansible.tags = "ansible"
+    end
+
+    config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/main.yml"
+      ansible.tags = "cockpit"
+    end
+
+    config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/main.yml"
+      ansible.tags = "docker"
+    end
+
   end

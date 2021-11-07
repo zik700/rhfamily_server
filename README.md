@@ -22,16 +22,15 @@ ansible: 2.9.6
 # Dependencies
 
 List of installed packages:
-* [ ] python3 == 3.6.8
-* [ ] nginx 
-* [ ] docker
-* [ ] cockpit behind nginx reverse proxy
+* [x] python3
+* [x] nginx 
+* [x] docker
+* [x] cockpit behind nginx reverse proxy
 
 # Changelog
 
-* [ ] 0.1
-    * [ ] basic installation roles
-    * [ ] handle purge cache
+* [x] 0.1
+    * [x] basic installation roles
 * [ ] 0.2
     * [ ] install and describe know how about testinfra
     * [ ] test installed roles

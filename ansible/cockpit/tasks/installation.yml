@@ -1,0 +1,10 @@
+---
+  - name: YUM | Install cockpit
+    yum:
+      name: cockpit
+      state: present
+    update_cache: yes
+    tags:
+      - cockpit
+      - cockpit-install
+...

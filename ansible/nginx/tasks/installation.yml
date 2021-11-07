@@ -1,4 +1,13 @@
 ---
+  - name: YUM | Install EPEL-RELEASE
+    yum:
+      name: epel-release
+      state: latest
+      update_cache: yes
+    tags: 
+      - nginx
+      - nginx-install
+
   - name: YUM | install nginx
     yum:
       name: nginx

@@ -1,4 +1,4 @@
 ---
-# tasks file for nginx
+# tasks file for ansible/nginx
 - include: installation.yml
 - include: setup.yml
