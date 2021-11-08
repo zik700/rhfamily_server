@@ -12,18 +12,19 @@ Virtual machine with installed OS from RedHat family (RHEL, CentOS, Fedora) with
 - python3
 - ansible
 - docker/podman
-- cockpit behind nginx reverse proxy
+- cockpit behind nginx reverse proxy - administration web application available on port specified in vagrant-config.yml ex.(http://localhost:8080)
 
 VM should be prepared and configured using IaaC tools (preferably Vagrant/Terraform, Ansible) - we should be able to recreate this VM with the same configuration in our environment by just using configuration files prepared by the candidate.
 
 # Dependencies
 ### Host
-For right way of usage must have is below tools:
-1. https://www.vagrantup.com/downloads - Vagrant
-2. https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html - Ansible
+
+For proper operation, you must have the following tools:
+1. https://www.vagrantup.com/downloads - Vagrant [2.2.16]
+2. https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html - Ansible [2.9.6]
 
 ### VM
-List of installed packages on machine:
+List of installed packages on the machine:
 * [x] python3
 * [x] nginx 
 * [x] docker
@@ -31,9 +32,19 @@ List of installed packages on machine:
 
 # Usage example
 
-Run bellow command in project directory
+Run bellow command in project directory for build machine
 ```bash
-vagrant up
+$ vagrant up  
+```
+
+Run bellow command in project directory for re-provision
+```bash
+$ vagrant provision  
+```
+
+Run bellow command in project directory for remove built machine
+```bash
+$ vagrant destroy  
 ```
 
 # Changelog
