@@ -30,6 +30,15 @@ List of installed packages on the machine:
 * [x] docker
 * [x] cockpit behind nginx reverse proxy
 
+# Configuration
+
+All configuration contain in vagrant-config.yml in project directory.
+Configuration file has two section:
+* machine - available options for customize VM.
+* web - available options for customize web application (cockpit). Ports will be mapped with host/node.
+
+All options all required!
+
 # Usage example
 
 Run bellow command in project directory for build machine
